@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "BANKING_SYSTEM.Controllers.ClientController",
+    "Method": "GetClients",
+    "RelativePath": "Api/Client",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BANKING_SYSTEM.Controllers.ClientController",
+    "Method": "AddClient",
+    "RelativePath": "Api/Client",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "client",
+        "Type": "BANKING_SYSTEME.Models.Client",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

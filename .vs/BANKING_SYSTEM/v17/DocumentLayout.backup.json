@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\PROJET\\BANKINGSERVICE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|c:\\projet\\bankingservice\\bankingservice\\controllers\\clientcontroller1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|solutionrelative:bankingservice\\controllers\\clientcontroller1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|c:\\projet\\bankingservice\\bankingservice\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|solutionrelative:bankingservice\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|c:\\projet\\bankingservice\\bankingservice\\services\\bankingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|solutionrelative:bankingservice\\services\\bankingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|c:\\projet\\bankingservice\\bankingservice\\migrations\\20250603210341_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|solutionrelative:bankingservice\\migrations\\20250603210341_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|c:\\projet\\bankingservice\\bankingservice\\models\\compte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|solutionrelative:bankingservice\\models\\compte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|c:\\projet\\bankingservice\\bankingservice\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|solutionrelative:bankingservice\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|c:\\projet\\bankingservice\\bankingservice\\controllers\\comptecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDE5ED85-1DC4-4BFD-86F8-671CFDE0122C}|BANKINGSERVICE\\BANKING_SYSTEM.csproj|solutionrelative:bankingservice\\controllers\\comptecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Models\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "BANKINGSERVICE\\Models\\AppDBContext.cs",
+              "ToolTip": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Models\\AppDBContext.cs",
+              "RelativeToolTip": "BANKINGSERVICE\\Models\\AppDBContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T19:30:58.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClientController1.cs",
+              "DocumentMoniker": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Controllers\\ClientController1.cs",
+              "RelativeDocumentMoniker": "BANKINGSERVICE\\Controllers\\ClientController1.cs",
+              "ToolTip": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Controllers\\ClientController1.cs",
+              "RelativeToolTip": "BANKINGSERVICE\\Controllers\\ClientController1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T19:26:32.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BankingService.cs",
+              "DocumentMoniker": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Services\\BankingService.cs",
+              "RelativeDocumentMoniker": "BANKINGSERVICE\\Services\\BankingService.cs",
+              "ToolTip": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Services\\BankingService.cs",
+              "RelativeToolTip": "BANKINGSERVICE\\Services\\BankingService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAArwBgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T19:13:10.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Compte.cs",
+              "DocumentMoniker": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Models\\Compte.cs",
+              "RelativeDocumentMoniker": "BANKINGSERVICE\\Models\\Compte.cs",
+              "ToolTip": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Models\\Compte.cs",
+              "RelativeToolTip": "BANKINGSERVICE\\Models\\Compte.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T19:16:03.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "BANKINGSERVICE\\Models\\Client.cs",
+              "ToolTip": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Models\\Client.cs",
+              "RelativeToolTip": "BANKINGSERVICE\\Models\\Client.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA7wA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T19:13:12.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20250603210341_InitialCreate.cs",
+              "DocumentMoniker": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Migrations\\20250603210341_InitialCreate.cs",
+              "RelativeDocumentMoniker": "BANKINGSERVICE\\Migrations\\20250603210341_InitialCreate.cs",
+              "ToolTip": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Migrations\\20250603210341_InitialCreate.cs",
+              "RelativeToolTip": "BANKINGSERVICE\\Migrations\\20250603210341_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T21:03:42.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CompteController.cs",
+              "DocumentMoniker": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Controllers\\CompteController.cs",
+              "RelativeDocumentMoniker": "BANKINGSERVICE\\Controllers\\CompteController.cs",
+              "ToolTip": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\Controllers\\CompteController.cs",
+              "RelativeToolTip": "BANKINGSERVICE\\Controllers\\CompteController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T20:05:17.181Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
