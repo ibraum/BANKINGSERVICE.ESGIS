@@ -9,19 +9,19 @@ namespace BANKING_SYSTEM.Services
     public class BanqueService
     {
         private static AppDBContext context = new AppDBContext();
-        private static List<Client> Clients = context.Clients.ToList();
-        private static List<Compte> Comptes = context.Comptes.ToList();
+        private static List<Client> clients = context.Clients.ToList();
+        private static List<Compte> comptes = context.Comptes.ToList();
 
         public bool AjouterClient(Client client)
         {
-            bool exists = Clients.Where(c => c.Nom.Equals(client.Nom)).Any();
+            bool exists = clients.Where(c => c.Nom.Equals(client.Nom)).Any();
             if (!exists)
             {
                 using (var clientContext = new AppDBContext())
                 {
                     if (!clientContext.Clients.Where(c => c.Nom.Equals(client.Nom)).Any())
                     {
-                        Clients.Add(client);
+                        clients.Add(client);
                         clientContext.Clients.Add(client);
                         clientContext.SaveChanges();
                         return true;
@@ -34,7 +34,7 @@ namespace BANKING_SYSTEM.Services
         public bool ModifierClient(Client updateClient, int id)
         {
             bool result = false;
-            Clients.ForEach(c => {
+            clients.ForEach(c => {
                 if (c.Id == id)
                 {
                     using (var clientContext = new AppDBContext())
@@ -97,7 +97,7 @@ namespace BANKING_SYSTEM.Services
                                 {
                                    clientComptes.ForEach(cc => SupprimerCompte(cc.Id));
                                 }
-                                Clients.Remove(deleteClient);
+                                clients.Remove(deleteClient);
                                 clientContext.Clients.Remove(client);
                                 clientContext.SaveChanges();
                                 result = true;
@@ -116,7 +116,7 @@ namespace BANKING_SYSTEM.Services
 
         public Client? RechercherClient(int Id)
         {
-            var client = Clients.FirstOrDefault(c => c.Id == Id);
+            var client = clients.FirstOrDefault(c => c.Id == Id);
             if (client == null)
             {
                 using (var clientContext = new AppDBContext())
@@ -140,7 +140,7 @@ namespace BANKING_SYSTEM.Services
 
         public Client? RechercherClientParNom(string Nom)
         {
-            var client = Clients.FirstOrDefault(c => c.Nom.StartsWith(Nom));
+            var client = clients.FirstOrDefault(c => c.Nom.StartsWith(Nom));
             if (client != null)
             {
                 using (var clientContext = new AppDBContext())
@@ -164,8 +164,8 @@ namespace BANKING_SYSTEM.Services
 
         public List<Client>? RechercherLesClientsParNom(string Nom)
         {
-            var clients = Clients.Where(c => c.Nom.StartsWith(Nom)).ToList();
-            if (!clients.Any())
+            var clientsAll = clients.Where(c => c.Nom.StartsWith(Nom)).ToList();
+            if (!clientsAll.Any())
             {
                 using (var clientContext = new AppDBContext())
                 {
@@ -182,13 +182,13 @@ namespace BANKING_SYSTEM.Services
             }
             else
             {
-                return clients;
+                return clientsAll;
             }
         }
 
         public List<Client> AfficherClients()
         {
-            if (!Clients.Any())
+            if (!clients.Any())
             {
                 using (var clientContext = new AppDBContext())
                 {
@@ -197,7 +197,7 @@ namespace BANKING_SYSTEM.Services
             }
             else
             {
-                return Clients;
+                return clients;
             }
         }
 
@@ -206,12 +206,13 @@ namespace BANKING_SYSTEM.Services
 
         public bool AjouterCompte(Compte compte)
         {
-            var exists = Comptes.FirstOrDefault(c => c.NumAcc.Equals(compte.NumAcc));
+            var exists = comptes.FirstOrDefault(c => c.NumAcc.Equals(compte.NumAcc));
             if (exists == null)
             {
                 using (var compteContext = new AppDBContext())
                 {
-                    Comptes.Add(compte);
+                    comptes.Add(compte);
+                    
                     compteContext.Comptes.Add(compte);
                     compteContext.SaveChanges();
                     return true;
@@ -222,7 +223,7 @@ namespace BANKING_SYSTEM.Services
 
         public bool ModifierCompte(Compte updateCompte, int Id)
         {
-            Comptes.ForEach(c => {
+            comptes.ForEach(c => {
                 if (c.Id == Id)
                 {
                     using (var compteContext = new AppDBContext())
@@ -251,6 +252,7 @@ namespace BANKING_SYSTEM.Services
                                     compte.Solde = updateCompte.Solde;
 
                                     compteTrans.Commit();
+                                    compteContext.SaveChanges();
                                 }
                             } catch
                             {
@@ -279,7 +281,7 @@ namespace BANKING_SYSTEM.Services
                             var compte = compteContext.Comptes.FirstOrDefault(c => c.Id == Id);
                             if (compte != null)
                             {
-                                Comptes.Remove(deleteCompte);
+                                comptes.Remove(deleteCompte);
                                 compteContext.Comptes.Remove(compte);
                                 compteContext.SaveChanges();
                                 return true;
@@ -299,7 +301,7 @@ namespace BANKING_SYSTEM.Services
 
         public Compte? RechercherCompte(int Id)
         {
-            var compte = Comptes.FirstOrDefault(c => c.Id == Id);
+            var compte = comptes.FirstOrDefault(c => c.Id == Id);
             if (compte != null)
             {
                 using (var compteContext = new AppDBContext())
@@ -326,7 +328,7 @@ namespace BANKING_SYSTEM.Services
             var client = RechercherClient(Id);
             if (client != null)
             {
-                var comptesClient = Comptes.Where(cc => cc.ClientId == Id).ToList();
+                var comptesClient = comptes.Where(cc => cc.ClientId == Id).ToList();
                 if (!comptesClient.Any())
                 {
                     using (var comptesContext = new AppDBContext())
@@ -344,7 +346,7 @@ namespace BANKING_SYSTEM.Services
 
         public List<Compte> AfficherComptes()
         {
-            if (!Comptes.Any())
+            if (!comptes.Any())
             {
                 using (var compteContext = new AppDBContext())
                 {
@@ -353,7 +355,7 @@ namespace BANKING_SYSTEM.Services
             }
             else
             {
-                return Comptes;
+                return comptes;
             }
         }
 

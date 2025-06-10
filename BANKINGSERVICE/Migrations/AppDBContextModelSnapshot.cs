@@ -94,10 +94,6 @@ namespace BANKING_SYSTEM.Migrations
                     b.Property<decimal>("Solde")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("TypeCompte")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ClientId");

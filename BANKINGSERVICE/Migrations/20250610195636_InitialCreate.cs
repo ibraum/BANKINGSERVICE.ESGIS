@@ -40,7 +40,6 @@ namespace BANKING_SYSTEM.Migrations
                     MontantDecouvert = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     AutorisationDecouvert = table.Column<bool>(type: "bit", nullable: false),
                     Solde = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TypeCompte = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ClientId = table.Column<int>(type: "int", nullable: false),
                     NumAcc = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),

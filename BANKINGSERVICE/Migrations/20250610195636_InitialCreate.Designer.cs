@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BANKING_SYSTEM.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250610174227_InitialCreate")]
+    [Migration("20250610195636_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -96,10 +96,6 @@ namespace BANKING_SYSTEM.Migrations
 
                     b.Property<decimal>("Solde")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("TypeCompte")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

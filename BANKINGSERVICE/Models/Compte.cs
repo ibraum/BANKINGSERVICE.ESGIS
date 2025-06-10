@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Web;
+
+// TPH
+// Mvc Core
 
 namespace BANKING_SYSTEM.Models
 {
-  
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
+    [JsonDerivedType(typeof(Livret), "livret")]
+    [JsonDerivedType(typeof(PEL), "pel")]
+    [JsonDerivedType(typeof(CompteCourant), "comptecourant")]
     public abstract class Compte
     {
         public int Id { get; set; }
@@ -14,10 +21,9 @@ namespace BANKING_SYSTEM.Models
         public decimal MontantDecouvert { get; set; }
         public bool AutorisationDecouvert { get; set; }
         public decimal Solde { get; set; }
-        public String TypeCompte { get; set; }
         public int ClientId { get; set; }
-        public Client Client { get; set; }
-        public String NumAcc { get; set; }
+        public Client? Client { get; set; }
+        public string NumAcc { get; set; }
 
         public virtual void Credit(decimal montant) => Solde += montant;
 

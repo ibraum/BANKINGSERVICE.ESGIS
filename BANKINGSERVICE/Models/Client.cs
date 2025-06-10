@@ -14,7 +14,8 @@ namespace BANKING_SYSTEM.Models
         public string CodePostal {get; set;}
         public string Ville  {get; set;}
         public string Telephone  {get; set;}
-        public ICollection<Compte> Comptes { get; set; }
+
+        //public ICollection<Compte> Comptes { get; set; } DANGEROUS
 
     }
 }
