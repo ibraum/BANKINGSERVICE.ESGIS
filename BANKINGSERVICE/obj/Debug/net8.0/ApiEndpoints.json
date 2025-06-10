@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "client",
-        "Type": "BANKING_SYSTEME.Models.Client",
+        "Type": "BANKING_SYSTEM.Models.Client",
         "IsRequired": true
       }
     ],
@@ -27,7 +27,7 @@
   },
   {
     "ContainingType": "BANKING_SYSTEM.Controllers.ClientController",
-    "Method": "AddClient",
+    "Method": "GetClientByID",
     "RelativePath": "Api/Client/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -51,7 +51,7 @@
     "Parameters": [
       {
         "Name": "client",
-        "Type": "BANKING_SYSTEME.Models.Client",
+        "Type": "BANKING_SYSTEM.Models.Client",
         "IsRequired": true
       },
       {

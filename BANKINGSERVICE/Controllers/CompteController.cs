@@ -14,24 +14,24 @@ namespace BANKING_SYSTEM.Controllers
         private readonly BanqueService _service = new BanqueService();
         
         [HttpGet]
-        public IActionResult GetComptes() => Ok(_service.AfficherComptes());
+        public IActionResult GetComptes() {
 
+            return Ok(_service.AfficherComptes());
+                
+        }
 
         [HttpPost]
         public IActionResult AddCompte([FromBody] Compte compte)
         {
             _service.AjouterCompte(compte);
-            return Ok();
+            return Created();
         }
 
-        [HttpPost("virement")]
-        public IActionResult Virement([FromQuery] int source, [FromQuery] int destination, [FromQuery] decimal montant)
+        [HttpPut("{Id}")]
+        public IActionResult UpdateCompte([FromBody] Compte compte, int Id)
         {
-            if (_service.Virement(source, destination, montant))
-            {
-                return Ok("virement réussi");
-            }
-            return BadRequest("Echec de virement");
+            _service.ModifierCompte(compte, Id);
+            return Ok();
         }
 
         [HttpDelete("{id}")]
@@ -57,7 +57,7 @@ namespace BANKING_SYSTEM.Controllers
             return Ok(compte);
         }
 
-        [HttpGet("client/{clientId}")]
+        [HttpGet("Client/{clientId}")]
         public ActionResult<IEnumerable<Compte>> RechercherComptesClient(int clientId)
         {
             var comptes = _service.AfficherComptes();
@@ -66,6 +66,16 @@ namespace BANKING_SYSTEM.Controllers
                 return NotFound($"Aucun compte(s) trouvé(s) avec l'id {clientId}");
             }
             return Ok(comptes);
+        }
+
+        [HttpPost("Virement")]
+        public IActionResult Virement([FromBody] int source, [FromBody] int destination, [FromBody] decimal montant)
+        {
+            if (_service.Virement(source, destination, montant))
+            {
+                return Ok("virement réussi");
+            }
+            return BadRequest("Echec de virement");
         }
     }
 }

@@ -22,55 +22,55 @@ namespace BANKING_SYSTEM.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BANKING_SYSTEME.Models.Client", b =>
+            modelBuilder.Entity("BANKING_SYSTEM.Models.Client", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("adresse")
+                    b.Property<string>("Adresse")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("code_postal")
+                    b.Property<string>("CodePostal")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nom")
+                    b.Property<string>("Nom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("prenom")
+                    b.Property<string>("Prenom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("telephone")
+                    b.Property<string>("Telephone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ville")
+                    b.Property<string>("Ville")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("BANKING_SYSTEME.Models.Compte", b =>
+            modelBuilder.Entity("BANKING_SYSTEM.Models.Compte", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<bool>("AutorisationDecouvert")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Clientid")
+                    b.Property<int>("ClientId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateOuverture")
@@ -82,14 +82,14 @@ namespace BANKING_SYSTEM.Migrations
                         .HasColumnType("nvarchar(8)");
 
                     b.Property<string>("Libelle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("MontantDecouvert")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("NumAcc")
-                        .HasColumnType("int");
+                    b.Property<string>("NumAcc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Solde")
                         .HasColumnType("decimal(18,2)");
@@ -98,9 +98,9 @@ namespace BANKING_SYSTEM.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
-                    b.HasIndex("Clientid");
+                    b.HasIndex("ClientId");
 
                     b.ToTable("Comptes");
 
@@ -109,9 +109,9 @@ namespace BANKING_SYSTEM.Migrations
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("BANKING_SYSTEME.Models.Livret", b =>
+            modelBuilder.Entity("BANKING_SYSTEM.Models.Livret", b =>
                 {
-                    b.HasBaseType("BANKING_SYSTEME.Models.Compte");
+                    b.HasBaseType("BANKING_SYSTEM.Models.Compte");
 
                     b.Property<double>("TauxDeRenumeration")
                         .HasColumnType("float");
@@ -119,9 +119,9 @@ namespace BANKING_SYSTEM.Migrations
                     b.HasDiscriminator().HasValue("Livret");
                 });
 
-            modelBuilder.Entity("BANKING_SYSTEME.Models.PEL", b =>
+            modelBuilder.Entity("BANKING_SYSTEM.Models.PEL", b =>
                 {
-                    b.HasBaseType("BANKING_SYSTEME.Models.Compte");
+                    b.HasBaseType("BANKING_SYSTEM.Models.Compte");
 
                     b.Property<double>("TauxDeRenumeration")
                         .HasColumnType("float");
@@ -135,18 +135,18 @@ namespace BANKING_SYSTEM.Migrations
                     b.HasDiscriminator().HasValue("PEL");
                 });
 
-            modelBuilder.Entity("BANKING_SYSTEME.Models.Compte", b =>
+            modelBuilder.Entity("BANKING_SYSTEM.Models.Compte", b =>
                 {
-                    b.HasOne("BANKING_SYSTEME.Models.Client", "Client")
+                    b.HasOne("BANKING_SYSTEM.Models.Client", "Client")
                         .WithMany("Comptes")
-                        .HasForeignKey("Clientid")
+                        .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Client");
                 });
 
-            modelBuilder.Entity("BANKING_SYSTEME.Models.Client", b =>
+            modelBuilder.Entity("BANKING_SYSTEM.Models.Client", b =>
                 {
                     b.Navigation("Comptes");
                 });

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BANKING_SYSTEM.props" />
+</Project>
