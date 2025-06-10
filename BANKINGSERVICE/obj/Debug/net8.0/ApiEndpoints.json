@@ -24,5 +24,58 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BANKING_SYSTEM.Controllers.ClientController",
+    "Method": "AddClient",
+    "RelativePath": "Api/Client/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BANKING_SYSTEM.Controllers.ClientController",
+    "Method": "UpdateClient",
+    "RelativePath": "Api/Client/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "client",
+        "Type": "BANKING_SYSTEME.Models.Client",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BANKING_SYSTEM.Controllers.ClientController",
+    "Method": "DeleteClient",
+    "RelativePath": "Api/Client/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

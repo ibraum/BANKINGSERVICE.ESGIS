@@ -180,3 +180,12 @@ C:\PROJET\BANKINGSERVICE\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.pdb
 C:\PROJET\BANKINGSERVICE\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.genruntimeconfig.cache
 C:\PROJET\BANKINGSERVICE\BANKINGSERVICE\obj\Debug\net8.0\ref\BANKING_SYSTEM.dll
 C:\PROJET\BANKINGSERVICE\BANKINGSERVICE\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\ibrau\source\repos\ibraum\BANKINGSERVICE.ESGIS\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.csproj.AssemblyReference.cache
+C:\Users\ibrau\source\repos\ibraum\BANKINGSERVICE.ESGIS\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ibrau\source\repos\ibraum\BANKINGSERVICE.ESGIS\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.AssemblyInfoInputs.cache
+C:\Users\ibrau\source\repos\ibraum\BANKINGSERVICE.ESGIS\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.AssemblyInfo.cs
+C:\Users\ibrau\source\repos\ibraum\BANKINGSERVICE.ESGIS\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.csproj.CoreCompileInputs.cache
+C:\Users\ibrau\source\repos\ibraum\BANKINGSERVICE.ESGIS\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ibrau\source\repos\ibraum\BANKINGSERVICE.ESGIS\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.RazorAssemblyInfo.cache
+C:\Users\ibrau\source\repos\ibraum\BANKINGSERVICE.ESGIS\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.RazorAssemblyInfo.cs
+C:\Users\ibrau\source\repos\ibraum\BANKINGSERVICE.ESGIS\BANKINGSERVICE\obj\Debug\net8.0\BANKING_SYSTEM.sourcelink.json

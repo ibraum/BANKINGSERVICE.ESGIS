@@ -6765,23 +6765,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\junio\\.nuget\\packages\\": {},
+    "C:\\Users\\ibrau\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\BANKING_SYSTEM.csproj",
+      "projectUniqueName": "C:\\Users\\ibrau\\source\\repos\\ibraum\\BANKINGSERVICE.ESGIS\\BANKINGSERVICE\\BANKING_SYSTEM.csproj",
       "projectName": "BANKING_SYSTEM",
-      "projectPath": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\BANKING_SYSTEM.csproj",
-      "packagesPath": "C:\\Users\\junio\\.nuget\\packages\\",
-      "outputPath": "C:\\PROJET\\BANKINGSERVICE\\BANKINGSERVICE\\obj\\",
+      "projectPath": "C:\\Users\\ibrau\\source\\repos\\ibraum\\BANKINGSERVICE.ESGIS\\BANKINGSERVICE\\BANKING_SYSTEM.csproj",
+      "packagesPath": "C:\\Users\\ibrau\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ibrau\\source\\repos\\ibraum\\BANKINGSERVICE.ESGIS\\BANKINGSERVICE\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\junio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ibrau\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6790,7 +6790,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6809,7 +6808,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -6853,7 +6852,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using BANKINGSERVICE.Models;
+using BANKING_SYSTEM.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BANKINGSERVICE.Controllers
+namespace BANKING_SYSTEM.Controllers
 {
     public class HomeController : Controller
     {

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNetCore.Mvc;
-using BANKING_SYSTEME.Models;
-using BANKING_SYSTEME.Services;
+using BANKING_SYSTEM.Models;
+using BANKING_SYSTEM.Services;
 
 namespace BANKING_SYSTEM.Controllers
 {

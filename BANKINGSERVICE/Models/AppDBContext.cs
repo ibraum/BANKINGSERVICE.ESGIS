@@ -1,4 +1,4 @@
-﻿using BANKING_SYSTEME.Models;
+﻿using BANKING_SYSTEM.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -13,7 +13,7 @@ namespace BANKING_SYSTEM.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder OptionsBuilder)
         {
-            OptionsBuilder.UseSqlServer("Server=TLAN ;Database=CoursASPNet ;Trusted_Connection=True; TrustServerCertificate=True; Encrypt=True ;");
+            OptionsBuilder.UseSqlServer("Server=_I_B_M_\\DEV_SQLSERVER ;Database=CoursASPNet ;Trusted_Connection=True; TrustServerCertificate=True; Encrypt=True ;");
         }
     }
 }

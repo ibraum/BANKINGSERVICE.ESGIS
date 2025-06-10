@@ -1,10 +1,10 @@
 ﻿using BANKING_SYSTEM.Models;
-using BANKING_SYSTEME.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 
-namespace BANKING_SYSTEME.Services
+namespace BANKING_SYSTEM.Services
 {
     public class BanqueService
     {
@@ -13,12 +13,12 @@ namespace BANKING_SYSTEME.Services
 
         public bool AjouterClient(Client client)
         {
-            bool exists = Clients.Where(c => c.nom.Equals(client.nom)).Any();
+            bool exists = Clients.Where(c => c.Nom.Equals(client.Nom)).Any();
             if (!exists)
             {
                 using (var clientContext = new AppDBContext())
                 {
-                    if (!clientContext.Clients.Where(c => c.nom.Equals(client.nom)).Any())
+                    if (!clientContext.Clients.Where(c => c.Nom.Equals(client.Nom)).Any())
                     {
                         Clients.Add(client);
                         clientContext.Clients.Add(client);
@@ -33,28 +33,28 @@ namespace BANKING_SYSTEME.Services
         public bool ModifierClient(Client updateClient)
         {
             Clients.ForEach(c => {
-                if (c.id == updateClient.id)
+                if (c.Id == updateClient.Id)
                 {
                     using (var clientContext = new AppDBContext())
                     {
-                        Client client = clientContext.Clients.Where(cc => cc.nom.Equals(updateClient.nom)).FirstOrDefault();
+                        var client = clientContext.Clients.Where(cc => cc.Nom.Equals(updateClient.Nom)).FirstOrDefault();
                         if (client != null)
                         {
                             //list
-                            c.nom = updateClient.nom;
-                            c.prenom = updateClient.prenom;
-                            c.adresse = updateClient.adresse;
-                            c.code_postal = updateClient.code_postal;
-                            c.telephone = updateClient.telephone;
-                            c.ville = updateClient.ville;
+                            c.Nom = updateClient.Nom;
+                            c.Prenom = updateClient.Prenom;
+                            c.Adresse = updateClient.Adresse;
+                            c.CodePostal = updateClient.CodePostal;
+                            c.Telephone = updateClient.Telephone;
+                            c.Ville = updateClient.Ville;
 
                             //context
-                            client.nom = updateClient.nom;
-                            client.prenom = updateClient.prenom;
-                            client.adresse = updateClient.adresse;
-                            client.code_postal = updateClient.code_postal;
-                            client.telephone = updateClient.telephone;
-                            client.ville = updateClient.ville;
+                            client.Nom = updateClient.Nom;
+                            client.Prenom = updateClient.Prenom;
+                            client.Adresse = updateClient.Adresse;
+                            client.CodePostal = updateClient.CodePostal;
+                            client.Telephone = updateClient.Telephone;
+                            client.Ville = updateClient.Ville;
                             clientContext.Clients.Add(client);
                             clientContext.SaveChanges();
 
@@ -65,9 +65,9 @@ namespace BANKING_SYSTEME.Services
             return false;
         }
 
-        public bool SupprimerClient(int id)
+        public bool SupprimerClient(int Id)
         {
-            Client deleteClient = this.RechercherClient(id);
+            Client? deleteClient = this.RechercherClient(Id);
 
             if (deleteClient != null)
             {
@@ -77,11 +77,11 @@ namespace BANKING_SYSTEME.Services
                     {
                         try
                         {
-                            var client = clientContext.Clients.Where(c => c.nom.Equals(deleteClient.nom));
+                            var client = clientContext.Clients.Where(c => c.Nom.Equals(deleteClient.Nom));
                             if (client.Any())
                             {
-                                var clientComptes = AfficherComptesClient(id);
-                                clientComptes.ForEach(cc => SupprimerCompte(cc.id));
+                                var clientComptes = AfficherComptesClient(Id);
+                                clientComptes.ForEach(cc => SupprimerCompte(cc.Id));
                                 Clients.Remove(deleteClient);
                                 clientContext.Clients.Remove(client.FirstOrDefault());
                                 clientContext.SaveChanges();
@@ -100,14 +100,14 @@ namespace BANKING_SYSTEME.Services
             return false;
         }
 
-        public Client RechercherClient(int id)
+        public Client? RechercherClient(int Id)
         {
-            var client = Clients.Where(c => c.id == id);
+            var client = Clients.Where(c => c.Id == Id);
             if (!client.Any())
             {
                 using (var clientContext = new AppDBContext())
                 {
-                    var cc = clientContext.Clients.Where(c => c.id == id);
+                    var cc = clientContext.Clients.Where(c => c.Id == Id);
                     if (!cc.Any())
                     {
                         return cc.FirstOrDefault();
@@ -124,14 +124,14 @@ namespace BANKING_SYSTEME.Services
             }
         }
 
-        public Client RechercherClientParnom(string nom)
+        public Client? RechercherClientParNom(string Nom)
         {
-            var client = Clients.Where(c => c.nom.StartsWith(nom));
+            var client = Clients.Where(c => c.Nom.StartsWith(Nom));
             if (!client.Any())
             {
                 using (var clientContext = new AppDBContext())
                 {
-                    var cc = clientContext.Clients.Where(c => c.nom.StartsWith(nom));
+                    var cc = clientContext.Clients.Where(c => c.Nom.StartsWith(Nom));
                     if (!cc.Any())
                     {
                         return cc.FirstOrDefault();
@@ -148,14 +148,14 @@ namespace BANKING_SYSTEME.Services
             }
         }
 
-        public List<Client> RechercherLesClientsParnom(string nom)
+        public List<Client>? RechercherLesClientsParNom(string Nom)
         {
-            var clients = Clients.Where(c => c.nom.StartsWith(nom)).ToList();
+            var clients = Clients.Where(c => c.Nom.StartsWith(Nom)).ToList();
             if (!clients.Any())
             {
                 using (var clientContext = new AppDBContext())
                 {
-                    var cc = clientContext.Clients.Where(c => c.nom.StartsWith(nom)).ToList();
+                    var cc = clientContext.Clients.Where(c => c.Nom.StartsWith(Nom)).ToList();
                     if (!cc.Any())
                     {
                         return cc;
@@ -194,8 +194,16 @@ namespace BANKING_SYSTEME.Services
             bool exists = Comptes.Where(c => c.NumAcc.Equals(compte.NumAcc)).Any();
             if (!exists)
             {
-                Comptes.Add(compte);
-                return true;
+                using (var compteContext = new AppDBContext())
+                {
+                    if (!compteContext.Comptes.Where(c => c.Id == compte.Id).Any())
+                    {
+                        Comptes.Add(compte);
+                        compteContext.Comptes.Add(compte);
+                        compteContext.SaveChanges();
+                        return true;
+                    }
+                }
             }
             return false;
         }
@@ -203,23 +211,40 @@ namespace BANKING_SYSTEME.Services
         public bool ModifierCompte(Compte updateCompte)
         {
             Comptes.ForEach(c => {
-                if (c.id == updateCompte.id)
+                if (c.Id == updateCompte.Id)
                 {
-                    c.NumAcc = updateCompte.NumAcc;
-                    c.Libelle = updateCompte.Libelle;
-                    c.MontantDecouvert = updateCompte.MontantDecouvert;
-                    c.DateOuverture = updateCompte.DateOuverture;
-                    c.AutorisationDecouvert = updateCompte.AutorisationDecouvert;
-                    c.Solde = updateCompte.Solde;
+                    using (var compteContext = new AppDBContext())
+                    {
+                        var compte = compteContext.Comptes.Where(cc => cc.Id == updateCompte.Id).FirstOrDefault();
+                        if (compte != null)
+                        {
+                            //list
+                            c.NumAcc = updateCompte.NumAcc;
+                            c.Libelle = updateCompte.Libelle;
+                            c.MontantDecouvert = updateCompte.MontantDecouvert;
+                            c.DateOuverture = updateCompte.DateOuverture;
+                            c.AutorisationDecouvert = updateCompte.AutorisationDecouvert;
+                            c.Solde = updateCompte.Solde;
+
+                            //context
+                            compte.NumAcc = updateCompte.NumAcc;
+                            compte.Libelle = updateCompte.Libelle;
+                            compte.MontantDecouvert = updateCompte.MontantDecouvert;
+                            compte.DateOuverture = updateCompte.DateOuverture;
+                            compte.AutorisationDecouvert = updateCompte.AutorisationDecouvert;
+                            compte.Solde = updateCompte.Solde;
+
+                        }
+                    }
                 }
             });
 
             return false;
         }
 
-        public bool SupprimerCompte(int id)
+        public bool SupprimerCompte(int Id)
         {
-            Compte deleteCompte = RechercherCompte(id);
+            Compte deleteCompte = RechercherCompte(Id);
 
             if (deleteCompte != null)
             {
@@ -229,11 +254,11 @@ namespace BANKING_SYSTEME.Services
                     {
                         try
                         {
-                            var compte = compteContext.Comptes.Where(c => c.id == id);
-                            if (compte.Any())
+                            var compte = compteContext.Comptes.Where(c => c.Id == Id);
+                            if (!compte.Any())
                             {
                                 Comptes.Remove(deleteCompte);
-                                compteContext.Comptes.Remove(compte.FirstOrDefault());
+                                compteContext.Comptes.Remove(compte.First());
                                 compteContext.SaveChanges();
                                 return true;
                             }
@@ -250,22 +275,41 @@ namespace BANKING_SYSTEME.Services
             return false;
         }
 
-        public Compte RechercherCompte(int id)
+        public Compte? RechercherCompte(int Id)
         {
-            return Comptes.FirstOrDefault(c => c.id == id);
+            var compte = Comptes.Where(c => c.Id == Id);
+            if (!compte.Any())
+            {
+                using (var compteContext = new AppDBContext())
+                {
+                    var cc = compteContext.Comptes.Where(c => c.Id == Id);
+                    if (!cc.Any())
+                    {
+                        return cc.FirstOrDefault();
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            else
+            {
+                return compte.FirstOrDefault();
+            }
         }
 
-        public List<Compte> AfficherComptesClient(int id)
+        public List<Compte> AfficherComptesClient(int Id)
         {
-            var client = RechercherClient(id);
+            var client = RechercherClient(Id);
             if (client != null)
             {
-                var comptesClient = Comptes.Where(cc => cc.Clientid == id).ToList();
+                var comptesClient = Comptes.Where(cc => cc.ClientId == Id).ToList();
                 if (!comptesClient.Any())
                 {
                     using (var comptesContext = new AppDBContext())
                     {
-                        return comptesContext.Comptes.Where(cc => cc.Clientid == id).ToList();
+                        return comptesContext.Comptes.Where(cc => cc.ClientId == Id).ToList();
                     }
                 }
                 else
@@ -273,18 +317,28 @@ namespace BANKING_SYSTEME.Services
                     return comptesClient;
                 }
             }
-            return Comptes.Where(c => c.Clientid == id).ToList();
+            return Comptes.Where(c => c.ClientId == Id).ToList();
         }
 
         public List<Compte> AfficherComptes()
         {
-            return Comptes;
+            if (!Comptes.Any())
+            {
+                using (var compteContext = new AppDBContext())
+                {
+                    return compteContext.Comptes.ToList();
+                }
+            }
+            else
+            {
+                return Comptes;
+            }
         }
 
-        public bool Virement(int sourceid, int destinationid, decimal montant)
+        public bool Virement(int sourceId, int destinationId, decimal montant)
         {
-            Compte source = RechercherCompte(sourceid);
-            Compte destination = RechercherCompte(destinationid);
+            Compte? source = RechercherCompte(sourceId);
+            Compte? destination = RechercherCompte(destinationId);
 
             if (source != null && destination != null && source.Debit(montant))
             {

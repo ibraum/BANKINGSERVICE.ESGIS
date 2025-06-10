@@ -1,5 +1,5 @@
-﻿using BANKING_SYSTEME.Models;
-using BANKING_SYSTEME.Services;
+﻿using BANKING_SYSTEM.Models;
+using BANKING_SYSTEM.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +22,26 @@ namespace BANKING_SYSTEM.Controllers
             public IActionResult AddClient([FromBody] Client client)
             {
                 _service.AjouterClient(client);
+                return Ok();
+            }
+
+            [HttpGet("{id}")]
+            public IActionResult getClientByID(int id)
+            {
+                return Ok(_service.RechercherClient(id));
+            }
+
+            [HttpPut("{id}")]
+            public IActionResult UpdateClient([FromBody] Client client, int id)
+            {
+            _service.ModifierClient(client);
+                return Ok();
+            }
+
+            [HttpDelete("{id}")]
+            public IActionResult DeleteClient(int id)
+            {
+                _service.SupprimerClient(id);
                 return Ok();
             }
         }
