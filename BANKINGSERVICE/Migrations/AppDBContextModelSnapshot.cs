@@ -112,6 +112,12 @@ namespace BANKING_SYSTEM.Migrations
                     b.Property<double>("TauxDeRenumeration")
                         .HasColumnType("float");
 
+                    b.ToTable("Comptes", t =>
+                    {
+                        t.Property("TauxDeRenumeration")
+                            .HasColumnName("Livret_TauxDeRenumeration");
+                    });
+
                     b.HasDiscriminator().HasValue("Livret");
                 });
 
